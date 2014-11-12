@@ -1,0 +1,17 @@
+﻿@model List<TiConference.Models.Station>
+@{
+    ViewBag.Title = "Home Page";
+}
+<h2>Trein stations</h2>
+<div class="row">
+    <div class="col-md-4">
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li><a href="@Url.Action("Detail", new {id= item.id.Replace('.','_') })">@item.name</a></li>
+                @*<li><a href="@Url.Action("Detail", new {id= item.id.Replace('.','_'), stationName = item.name })">@item.name</a></li>*@
+                @*<li><a href="@Url.RouteUrl("station", new {id= item.id.Replace('.','_'), stationName =item.name })">@item.name</a></li>*@
+            }
+        </ul>
+    </div>
+</div>
